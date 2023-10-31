@@ -1,0 +1,19 @@
+Necessário:
+
+- MySQL (Instalado na máquina. Não usar o Xampp, pois o mesmo usa MariaDB)
+- PHP 8.2+ (Instalado na máquina. Não usar o do Xampp)
+
+Instruções:
+
+1 - Abra o arquivo /controllers/conexao.php e defina as informações do banco de dados MySQL
+2 - Abra o arquivo /banco/SQL.sql
+3 - Execute todo o conteúdo do arquivo SQL.sql
+	Se houver algum erro, verifique se o MySQL está instalado na máquina, o MariaDB do Xampp não é recomendado.
+
+4 - Abra um CMD na pasta principal do projeto e digite:
+	php -S localhost:3000
+
+5 - Abra um navegador e entre no link: http://localhost:3000/
+6 - Cadastre um novo usuário ou entre com o usuário Admin criado anteriormente pelo arquivo SQL.sql:
+	Email: admin@admin.com
+	Senha: admin
