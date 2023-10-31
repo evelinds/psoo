@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema BNotas
+-- Schema id21479697_projeto
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema BNotas
+-- Schema id21479697_projeto
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `BNotas` DEFAULT CHARACTER SET utf8 ;
-USE `BNotas` ;
+CREATE SCHEMA IF NOT EXISTS `id21479697_projeto` DEFAULT CHARACTER SET utf8 ;
+USE `id21479697_projeto` ;
 
 -- -----------------------------------------------------
--- Table `BNotas`.`Usuarios`
+-- Table `id21479697_projeto`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `BNotas`.`Usuarios` (
+CREATE TABLE IF NOT EXISTS `id21479697_projeto`.`usuarios` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
@@ -31,19 +31,19 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `BNotas`.`Notas`
+-- Table `id21479697_projeto`.`notas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `BNotas`.`Notas` (
+CREATE TABLE IF NOT EXISTS `id21479697_projeto`.`notas` (
   `idNota` INT NOT NULL AUTO_INCREMENT,
   `idUsuario` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `conteudo` VARCHAR(500) NOT NULL,
   `cor` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`idNota`),
-  INDEX `fk_Notas_Usuarios_idx` (`idUsuario` ASC) VISIBLE,
-  CONSTRAINT `fk_Notas_Usuarios`
+  INDEX `fk_notas_usuarios_idx` (`idUsuario` ASC) VISIBLE,
+  CONSTRAINT `fk_notas_usuarios`
     FOREIGN KEY (`idUsuario`)
-    REFERENCES `BNotas`.`Usuarios` (`idUsuario`)
+    REFERENCES `id21479697_projeto`.`usuarios` (`idUsuario`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
